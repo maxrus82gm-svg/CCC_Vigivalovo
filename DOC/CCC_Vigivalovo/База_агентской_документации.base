@@ -1,0 +1,26 @@
+filters:
+  and:
+    - file.ext == "md"
+    - проект == "CCC_Vigivalovo"
+    - раздел == "агентская система"
+    - статус == "рабочий"
+properties:
+  file.name:
+    displayName: Имя файла
+  тип:
+    displayName: Тип
+  раздел:
+    displayName: Раздел
+  статус:
+    displayName: Статус
+  источник:
+    displayName: Источник
+views:
+  - type: table
+    name: Рабочие документы
+    order:
+      - file.name
+      - тип
+      - раздел
+      - статус
+      - источник

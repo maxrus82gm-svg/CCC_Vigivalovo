@@ -11,14 +11,13 @@
             "id": "9194b41063f4ca5d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "Добро пожаловать.md",
-                "mode": "source",
-                "source": false
+                "file": "База_агентской_документации.base",
+                "viewName": "Рабочие документы"
               },
-              "icon": "lucide-file",
-              "title": "Добро пожаловать"
+              "icon": "lucide-table",
+              "title": "База_агентской_документации"
             }
           }
         ]
@@ -31,10 +30,14 @@
             "id": "ea44bcc2b64c9546",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
+              "type": "markdown",
+              "state": {
+                "file": "Настройка_прав_субагентов.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Настройка_прав_субагентов"
             }
           }
         ]
@@ -110,7 +113,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Добро пожаловать.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +122,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для Добро пожаловать"
+              "title": "Обратные ссылки"
             }
           },
           {
@@ -129,12 +131,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Добро пожаловать.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из Добро пожаловать"
+              "title": "Исходящие ссылки"
             }
           },
           {
@@ -172,13 +173,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Добро пожаловать.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура Добро пожаловать"
+              "title": "Структура"
             }
           }
         ]
@@ -199,8 +199,31 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "9194b41063f4ca5d",
+  "active": "759783657431c202",
   "lastOpenFiles": [
-    "Добро пожаловать.md"
+    "57C82200",
+    "CFEAA100",
+    "02246100",
+    "~$Основы игры.xlsx",
+    "7AE04200",
+    "База_агентской_документации.base",
+    "A7658100",
+    "Основы игры.xlsx",
+    "~ист Microsoft Excel.tmp",
+    "Лист Microsoft Excel.xlsx",
+    "Старт.md",
+    "Задача_агенту.md",
+    "Задача_внешнему_субагенту.md",
+    "Малый_блок_задачи.md",
+    "Большой_блок_задачи.md",
+    "Отчёт_проверки.md",
+    "Отчёт_субагента.md",
+    "Отчёт_агента.md",
+    "Добро пожаловать.md",
+    "Настройка_прав_субагентов.md",
+    "Правила_использования_субагентов.md",
+    "Правила_создания_документов.md",
+    "Правила_Git_и_проверки.md",
+    "Список_правил.md"
   ]
 }
