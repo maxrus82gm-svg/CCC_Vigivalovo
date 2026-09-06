@@ -13,13 +13,14 @@
 ACCC_VigivalovoCharacter::ACCC_VigivalovoCharacter()
 {
 	// Set size for collision capsule
-	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
+	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f); // размер коллизии персонажа (ширина, высота)
 	
 	// Create the first person mesh that will be viewed only by this character's owner
 	FirstPersonMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("First Person Mesh"));
+	
 
 	FirstPersonMesh->SetupAttachment(GetMesh());
-	FirstPersonMesh->SetOnlyOwnerSee(true);
+	FirstPersonMesh->SetOnlyOwnerSee(true); //если я играю, то вижу руки.
 	FirstPersonMesh->FirstPersonPrimitiveType = EFirstPersonPrimitiveType::FirstPerson;
 	FirstPersonMesh->SetCollisionProfileName(FName("NoCollision"));
 
@@ -28,11 +29,16 @@ ACCC_VigivalovoCharacter::ACCC_VigivalovoCharacter()
 	FirstPersonCameraComponent->SetupAttachment(FirstPersonMesh, FName("head"));
 	FirstPersonCameraComponent->SetRelativeLocationAndRotation(FVector(-2.8f, 5.89f, 0.0f), FRotator(0.0f, 90.0f, -90.0f));
 	FirstPersonCameraComponent->bUsePawnControlRotation = true;
-	FirstPersonCameraComponent->bEnableFirstPersonFieldOfView = true;
+	FirstPersonCameraComponent->bEnableFirstPersonFieldOfView = true; //мспользуй отдельный угол
 	FirstPersonCameraComponent->bEnableFirstPersonScale = true;
-	FirstPersonCameraComponent->FirstPersonFieldOfView = 70.0f;
-	FirstPersonCameraComponent->FirstPersonScale = 0.6f;
+	FirstPersonCameraComponent->FirstPersonFieldOfView = 70.0f; // угол обзораа
+	FirstPersonCameraComponent->FirstPersonScale = 0.6f; // уменьшаем размер отображения руу ИЗ КАМЕРЫ.
 
+	//Прикрепляем фонарик у которого будет пока что только свет
+
+	SvetFonarikaPersonazha = CreateDefaultSubobject<USpotLightComponent>(TEXT("Svet Fonarika Personazha")); // сначала указываем что за класс подключаем в класс персонажа, тип  копонента, сп ол лайт, и имя
+	SvetFonarikaPersonazha->SetupAttachment(GetMesh(), FName("head"));
+	SvetFonarikaPersonazha->SetRelativeLocationAndRotation(FVector(-2.8f, 5.89f, 0.0f), FRotator(0.0f, 90.0f, -90.0f));
 	// configure the character comps
 	GetMesh()->SetOwnerNoSee(true);
 	GetMesh()->FirstPersonPrimitiveType = EFirstPersonPrimitiveType::WorldSpaceRepresentation;
