@@ -25,16 +25,20 @@ class ACCC_VigivalovoCharacter : public ACharacter  //«Создаём класс ACCC_Vigiva
 	GENERATED_BODY()
 
 
-	//EditAnywhere позволяет менять класс компонента и наименование, BlueprintReadWrite позволяет менять переменную-ссылку в блюпринтах.
-	// VisibleAnywhere не дает менять класс компонента и наименование, BlueprintReadOnly относится прежде всего к переменной-ссылке, а не делает весь объект «неизменяемым»., meta = (AllowPrivateAccess = "true") 
-	// позволяет использовать компонент в блюпринтах, но не дает менять его там.
+	//	EditAnywhere позволяет менять класс компонента и наименование, BlueprintReadWrite позволяет менять переменную-ссылку в блюпринтах.
+	//	VisibleAnywhere не дает менять класс компонента и наименование, BlueprintReadOnly относится прежде всего к переменной-ссылке, а не делает весь объект «неизменяемым»., meta = (AllowPrivateAccess = "true") 
+	//	позволяет использовать компонент в блюпринтах, но не дает менять его там.
 
 	/** Pawn mesh: first person view (arms; seen only by self) */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* FirstPersonMesh;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	USpotLightComponent* SvetFonarikaPersonazha; // добавляем компонент фонарика
+	USpotLightComponent* SvetFonarikaPersonazha;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	USpotLightComponent* LazerPersonazha;
+
 
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
@@ -43,7 +47,10 @@ class ACCC_VigivalovoCharacter : public ACharacter  //«Создаём класс ACCC_Vigiva
 protected:
 	/** Действие ввода для фонарика */
 	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* FonarikAction;
+	UInputAction* SvetFonarikaPersonazha_Action;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	UInputAction* LazerPersonazha_Action;
 
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, Category ="Input")
@@ -88,7 +95,8 @@ protected:
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoJumpEnd();
 
-	void PerekluchitFonarik();
+	void Perekluchit_SvetFonarikaPersonazha();
+	void Perekluchit_LazerPersonazha();
 
 protected:
 
